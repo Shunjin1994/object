@@ -1,0 +1,62 @@
+[03-Jan-2020 22:15:49 Asia/Tokyo] POSTされた！
+[04-Jan-2020 10:22:51 Asia/Tokyo] POSTされた！
+[04-Jan-2020 10:22:51 Asia/Tokyo] PHP Notice:  Undefined index: god in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php on line 376
+[04-Jan-2020 10:22:51 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getName() on null in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php:376
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php on line 376
+[04-Jan-2020 10:23:32 Asia/Tokyo] POSTされた！
+[04-Jan-2020 10:23:32 Asia/Tokyo] PHP Notice:  Undefined index: god in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php on line 376
+[04-Jan-2020 10:23:32 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getName() on null in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php:376
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php on line 376
+[04-Jan-2020 10:25:37 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Class 'God' not found in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php:198
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php on line 198
+[04-Jan-2020 10:25:55 Asia/Tokyo] POSTされた！
+[04-Jan-2020 10:25:55 Asia/Tokyo] PHP Notice:  Undefined index: god in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php on line 376
+[04-Jan-2020 10:25:55 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getName() on null in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php:376
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php on line 376
+[04-Jan-2020 10:27:10 Asia/Tokyo] POSTされた！
+[04-Jan-2020 10:27:16 Asia/Tokyo] POSTされた！
+[04-Jan-2020 10:27:17 Asia/Tokyo] POSTされた！
+[04-Jan-2020 10:28:03 Asia/Tokyo] POSTされた！
+[04-Jan-2020 23:21:52 Asia/Tokyo] POSTされた！
+[04-Jan-2020 23:21:55 Asia/Tokyo] POSTされた！
+[04-Jan-2020 23:22:00 Asia/Tokyo] POSTされた！
+[04-Jan-2020 23:22:00 Asia/Tokyo] PHP Notice:  Undefined index: hp in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php on line 34
+[04-Jan-2020 23:22:00 Asia/Tokyo] PHP Notice:  Undefined index: hp in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php on line 35
+[04-Jan-2020 23:22:00 Asia/Tokyo] PHP Notice:  Undefined index: hp in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php on line 34
+[04-Jan-2020 23:22:00 Asia/Tokyo] PHP Notice:  Undefined index: hp in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php on line 35
+[04-Jan-2020 23:22:44 Asia/Tokyo] POSTされた！
+[04-Jan-2020 23:22:46 Asia/Tokyo] POSTされた！
+[04-Jan-2020 23:22:46 Asia/Tokyo] PHP Notice:  Object of class Human could not be converted to int in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php on line 34
+[04-Jan-2020 23:22:46 Asia/Tokyo] PHP Notice:  Object of class Human could not be converted to number in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php on line 50
+[04-Jan-2020 23:22:46 Asia/Tokyo] PHP Notice:  Object of class Human could not be converted to int in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php on line 34
+[04-Jan-2020 23:23:12 Asia/Tokyo] POSTされた！
+[04-Jan-2020 23:23:12 Asia/Tokyo] PHP Notice:  Undefined index: healcount in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php on line 281
+[04-Jan-2020 23:23:12 Asia/Tokyo] PHP Notice:  Undefined index: human in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php on line 288
+[04-Jan-2020 23:23:12 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getName() on null in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php:288
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php on line 288
+[04-Jan-2020 23:23:16 Asia/Tokyo] POSTされた！
+[04-Jan-2020 23:23:17 Asia/Tokyo] POSTされた！
+[04-Jan-2020 23:23:19 Asia/Tokyo] POSTされた！
+[04-Jan-2020 23:23:19 Asia/Tokyo] PHP Notice:  Undefined index: hp in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php on line 34
+[04-Jan-2020 23:23:19 Asia/Tokyo] PHP Notice:  Undefined index: hp in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php on line 35
+[04-Jan-2020 23:23:19 Asia/Tokyo] PHP Notice:  Undefined index: hp in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php on line 34
+[04-Jan-2020 23:23:19 Asia/Tokyo] PHP Notice:  Undefined index: hp in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework03/index.php on line 35
+[04-Jan-2020 23:24:56 Asia/Tokyo] POSTされた！
+[04-Jan-2020 23:24:57 Asia/Tokyo] POSTされた！
+[04-Jan-2020 23:25:01 Asia/Tokyo] POSTされた！
+[04-Jan-2020 23:25:03 Asia/Tokyo] POSTされた！
+[04-Jan-2020 23:25:04 Asia/Tokyo] POSTされた！
+[04-Jan-2020 23:25:05 Asia/Tokyo] POSTされた！
+[04-Jan-2020 23:25:06 Asia/Tokyo] POSTされた！
+[04-Jan-2020 23:25:08 Asia/Tokyo] POSTされた！
+[04-Jan-2020 23:25:10 Asia/Tokyo] POSTされた！
