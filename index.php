@@ -4,8 +4,21 @@ ini_set('log_errors','on');  //ログを取るか
 ini_set('error_log','php.log');  //ログの出力ファイルを指定
 session_start(); //セッション使う
 
+
+$debug_flg = true;
+//デバッグログ関数
+function debug($str){
+  global $debug_flg;
+  if(!empty($debug_flg)){
+    error_log('デバッグ：'.$str);
+  }
+}
+
+
 // モンスター達格納用
 $monsters = array();
+// $not = array_marge($monsters, $gods);
+
 // 性別クラス
 class Sex{
   const MAN = 1;
@@ -30,6 +43,7 @@ abstract class Creature{
   }
   public function setHp($num){
 
+
     $this->hp = $num;
     
     if($num > $this->maxhp){
@@ -37,8 +51,29 @@ abstract class Creature{
     }
 
   }
+  public function upsetHp($num){
+
+    $this->maxhp = $num;
+
+  }
   public function getHp(){
     return $this->hp;
+  }
+
+  public function setAttackMin($num){
+    $this->attackMin = $num;
+  }
+
+  public function getAttackMin(){
+    return $this->attackMin;
+  }
+
+  public function setAttackMax($num){
+    $this->attackMax = $num;
+  }
+
+  public function getAttackMax(){
+    return $this->attackMax;
   }
 
   public function attack($targetObj){
@@ -56,6 +91,26 @@ abstract class Creature{
     $healPoint = mt_rand($this->healMin, $this->healMax);
     $targetObj->setHp($targetObj->getHp()+$healPoint);
     History::set($healPoint.'ポイント回復！');
+  }
+
+  public function superheal($targetObj){
+    $healPoint = $this->maxhp;
+    $targetObj->setHp($targetObj->getHp()+$healPoint);
+    error_log($healPoint);
+    History::set($healPoint.'回復した！');
+  }
+  public function powerup($targetObj){
+    $powerup = 20;
+    $targetObj->setAttackMin($targetObj->getAttackMin()+$powerup);
+    $targetObj->setAttackMax($targetObj->getAttackMax()+$powerup);
+    History::set('攻撃力が20上がった！');
+    
+  }
+  public function buildup($targetObj){
+    $buildup = $this->maxhp;
+    $targetObj->upsetHp($targetObj->getHp()+$buildup);
+    // $targetObj->setHp($targetObj->getHp()*2);
+    History::set('HPが'.$buildup.'上がった！');
   }
 
 }
@@ -98,9 +153,9 @@ class Monster extends Creature{
   // プロパティ
   protected $img;
   // コンストラクタ
-  public function __construct($name, $maxhp, $hp, $img, $attackMin, $attackMax) {
+  public function __construct($name, $hp, $img, $attackMin, $attackMax, $healMin, $healMax) {
     $this->name = $name;
-    $this->maxhp = $maxhp;
+    // $this->maxhp = $maxhp;
     $this->hp = $hp;
     $this->img = $img;
     $this->attackMin = $attackMin;
@@ -118,8 +173,8 @@ class Monster extends Creature{
 // 魔法を使えるモンスタークラス
 class MagicMonster extends Monster{
   private $magicAttack;
-  function __construct($name, $hp, $img, $attackMin, $attackMax, $magicAttack) {
-    parent::__construct($name, $hp, $img, $attackMin, $attackMax);
+  function __construct($name, $hp, $img, $attackMin, $attackMax, $healMin, $healMax, $magicAttack) {
+    parent::__construct($name, $hp, $img, $attackMin, $attackMax, $healMin, $healMax);
     $this->magicAttack = $magicAttack;
   }
   public function getMagicAttack(){
@@ -137,18 +192,13 @@ class MagicMonster extends Monster{
 }
 //飛行モンスタークラス
 class FlyingMonster extends Monster{
-  private $flyingAttack;
-  function __construct($name, $hp, $img, $attackMin, $attackMax, $flyingAttack) {
-    parent::__construct($name, $hp, $img, $attackMin, $attackMax);
-    $this->flyingAttack = $flyingAttack;
-  }
-  public function getFlyingAttack(){
-    return $this->flyingAttack;
+  function __construct($name, $hp, $img, $attackMin, $attackMax, $healMin, $healMax) {
+    parent::__construct($name, $hp, $img, $attackMin, $attackMax, $healMin, $healMax);
   }
   public function attack($targetObj){
     if(!mt_rand(0,2)){ //3分の1の確率で飛行攻撃
       History::set($this->name.'の飛行攻撃!!');
-      $attackPoint = $this->flyingAttack * 1.2;
+      $attackPoint = mt_rand($this->attackMin, $this->attackMax) * 1.2;
       $attackPoint = (int)$attackPoint;
       $targetObj->setHp( $targetObj->getHp() - $attackPoint);
       History::set($attackPoint.'ポイントのダメージを受けた！');
@@ -162,6 +212,7 @@ class FlyingMonster extends Monster{
 //神様クラス
 class God{
   public static $name = '神様';
+  // const name = 
   public static $img = 'img/god.png';
   public $superheal;
   public $buildup;
@@ -169,19 +220,24 @@ class God{
     $this->superheal = $superheal;
     $this->buildup = $buildup;
   }
+  public function getName(){
+    return self::$name;
+  }
   public function getImg(){
-    return $this->img;
+    return self::$img;
   }
   public function getSuperheal(){
     return $this->superheal;
   }
   public function heal($targetObj){
-    History::set('超回復した！');
     $healPoint = $this->superheal;
     $targetObj->setHp($targetObj->getHp()+$healPoint);
+    History::set('超回復した！');
   }
   public function Powerup($targetObj){
+    $targetObj = $this->attackMin;
     History::set('攻撃力が上がった！');
+    
   }
   public function Buildup($targetObj){
     History::set('HPが上がった！');
@@ -208,28 +264,42 @@ class History implements HistoryInterface{
 
 // インスタンス生成
 $human = new Human('勇者見習い', Sex::OKAMA, 500, 500, 40, 120, 10, 100);
-$monsters[] = new Monster( 'フランケン', 100, 100, 'img/monster01.png', 20, 40 );
-$monsters[] = new MagicMonster( 'フランケンNEO', 300, 300, 'img/monster02.png', 20, 60, mt_rand(50, 100) );
-$monsters[] = new Monster( 'ドラキュリー', 200, 200, 'img/monster03.png', 30, 50 );
-$monsters[] = new MagicMonster( 'ドラキュラ男爵', 400, 400, 'img/monster04.png', 50, 80, mt_rand(60, 120) );
-$monsters[] = new FlyingMonster( 'アルカード', 350, 350, 'img/monster04.png', 40, 100, mt_rand(40, 100) );
-$monsters[] = new Monster( 'スカルフェイス', 150, 150, 'img/monster05.png', 30, 60 );
-$monsters[] = new FlyingMonster( 'フライングスケルトン', 125, 125, 'img/monster05.png', 20, 40, mt_rand(20, 40) );
-$monsters[] = new Monster( '毒ハンド', 100, 100, 'img/monster06.png', 10, 30 );
-$monsters[] = new Monster( '泥ハンド', 120, 120, 'img/monster07.png', 20, 30 );
-$monsters[] = new Monster( '血のハンド', 180, 180, 'img/monster08.png', 30, 50 );
-$monsters[] = new Monster( '血のハンド', 180, 180, 'img/monster08.png', 30, 50 );
-$monsters[] = new God( '神様', 'img/god.png', 0, 0);
+$monsters[] = new Monster( 'フランケン', 100, 'img/monster01.png', 20, 40, 10, 100 );
+$monsters[] = new MagicMonster( 'フランケンNEO', 300, 'img/monster02.png', 20, 60, 10, 100, mt_rand(50, 100) );
+$monsters[] = new Monster( 'ドラキュリー', 200, 'img/monster03.png', 30, 50, 10, 100 );
+$monsters[] = new MagicMonster( 'ドラキュラ男爵', 400, 'img/monster04.png', 50, 80, 10, 100, mt_rand(60, 120) );
+$monsters[] = new FlyingMonster( 'アルカード', 350, 'img/monster04.png', 40, 100, 10, 100 );
+$monsters[] = new Monster( 'スカルフェイス', 150, 'img/monster05.png', 30, 60, 10, 100 );
+$monsters[] = new FlyingMonster( 'フライングスケルトン', 125, 'img/monster05.png', 20, 40, 10, 100 );
+$monsters[] = new Monster( '毒ハンド', 100, 'img/monster06.png', 10, 30, 10, 100 );
+$monsters[] = new Monster( '泥ハンド', 120, 'img/monster07.png', 20, 30, 10, 100 );
+$monsters[] = new Monster( '血のハンド', 180, 'img/monster08.png', 30, 50, 10, 100 );
+$monsters[] = new Monster( '血のハンド', 180, 'img/monster08.png', 30, 50, 10, 100 );
+// $god[] = new God( '神様', 'img/god.png', 0, 0);
+$god = new God( '神様', 'img/god.png');
 
-function createMonster(){
+function createCreature(){
   global $monsters;
-  $monster =  $monsters[mt_rand(0, 10)];
-  History::set($monster->getName().'が現れた！');
-  $_SESSION['monster'] =  $monster;
+  global $god;
+
+  if(mt_rand(0, 1)){
+
+    $monster = $monsters[mt_rand(0, 10)];
+    History::set($monster->getName().'が現れた！');
+    $_SESSION['monster'] = $monster;
+
+  }else{
+
+    unset($_SESSION['monster']);
+    History::set($god->getName().'が現れた！');
+    $_SESSION['god'] = $god;
+
+  }
+  
 }
 function createHuman(){
   global $human;
-  $_SESSION['human'] =  $human;
+  $_SESSION['human'] = $human;
 }
 function init(){
   History::clear();
@@ -237,7 +307,7 @@ function init(){
   $_SESSION['knockDownCount'] = 0;
   $_SESSION['healcount'] = 0;
   createHuman();
-  createMonster();
+  createCreature();
 }
 function gameOver(){
   $_SESSION = array();
@@ -249,6 +319,9 @@ if(!empty($_POST)){
   $attackFlg = (!empty($_POST['attack'])) ? true : false;
   $healFlg = (!empty($_POST['heal'])) ? true : false;
   $startFlg = (!empty($_POST['start'])) ? true : false;
+  $superhealFlg = (!empty($_POST['superheal'])) ? true : false;
+  $powerupFlg = (!empty($_POST['powerup'])) ? true : false;
+  $buildupFlg = (!empty($_POST['buildup'])) ? true : false;
   error_log('POSTされた！');
   
   if($startFlg){
@@ -271,24 +344,23 @@ if(!empty($_POST)){
       // 自分のhpが0以下になったらゲームオーバー
       if($_SESSION['human']->getHp() <= 0){
         gameOver();
+
       }else{
         // hpが0以下になったら、別のモンスターを出現させる
         if($_SESSION['monster']->getHp() <= 0){
           History::set($_SESSION['monster']->getName().'を倒した！');
-          createMonster();
+          createCreature();
           $_SESSION['knockDownCount'] = $_SESSION['knockDownCount']+1;
         }
       }
     
     }else if($healFlg){// 回復するを押した場合
 
-      
       if($_SESSION['healcount'] >= 3){
 
         History::set('もう回復できません！');
 
       }else{
-
         // 回復する
         History::set($_SESSION['human']->getName().'の回復！');
         $_SESSION['human']->heal($_SESSION['human']);
@@ -305,9 +377,27 @@ if(!empty($_POST)){
         gameOver();
       }
 
+    }else if($superhealFlg){// 神：回復してもらうを押した場合
+
+      History::set($_SESSION['god']->getName().'が回復してくれた！');
+      $_SESSION['human']->superheal($_SESSION['human']);
+      createCreature();
+
+    }else if($powerupFlg){// 神：強くしてもらうを押した場合
+
+        History::set($_SESSION['god']->getName().'が強くしてくれた！');
+        $_SESSION['human']->powerup($_SESSION['human']);
+        createCreature();
+
+    }else if($buildupFlg){// 神：丈夫にしてもらうを押した場合
+
+        History::set($_SESSION['god']->getName().'に丈夫にしてもらった！');
+        $_SESSION['human']->buildup($_SESSION['human']);
+        createCreature();
+
     }else{ //逃げるを押した場合
       History::set('逃げた！');
-      createMonster();
+      createCreature();
     }
   }
   $_POST = array();//これは？
@@ -382,7 +472,7 @@ if(!empty($_POST)){
         <form method="post">
           <input type="submit" name="start" value="▶ゲームスタート">
         </form>
-      <?php }else{ ?>
+      <?php }else if(!empty($_SESSION['monster'])){ ?>
         <h2><?php echo $_SESSION['monster']->getName().'が現れた!!'; ?></h2>
         <div style="height: 150px;">
           <img src="<?php echo $_SESSION['monster']->getImg(); ?>" style="width:120px; height:auto; margin:40px auto 0 auto; display:block;">
@@ -394,6 +484,20 @@ if(!empty($_POST)){
           <input type="submit" name="heal" value="▶回復する">
           <input type="submit" name="attack" value="▶攻撃する">
           <input type="submit" name="escape" value="▶逃げる">
+          <input type="submit" name="start" value="▶ゲームリスタート">
+        </form>
+        <?php }else{ ?>
+        <h2><?php echo $_SESSION['god']->getName().'が現れた!!'; ?></h2>
+        <div style="height: 150px;">
+          <img src="<?php echo $_SESSION['god']->getImg(); ?>" style="width:120px; height:auto; margin:40px auto 0 auto; display:block;">
+        </div>
+        <p style="font-size:14px; text-align:center;">選べ！！</p>
+        <p>倒したモンスター数：<?php echo $_SESSION['knockDownCount']; ?></p>
+        <p>勇者の残りHP：<?php echo $_SESSION['human']->getHp(); ?></p>
+        <form method="post">
+          <input type="submit" name="superheal" value="▶回復してもらう">
+          <input type="submit" name="powerup" value="▶強くしてもらう">
+          <input type="submit" name="buildup" value="▶丈夫にしてもらう">
           <input type="submit" name="start" value="▶ゲームリスタート">
         </form>
       <?php } ?>
