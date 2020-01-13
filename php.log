@@ -382,3 +382,174 @@ Stack trace:
 [13-Jan-2020 00:55:55 Asia/Tokyo] POSTされた！
 [13-Jan-2020 00:55:55 Asia/Tokyo] 2500
 [13-Jan-2020 00:55:59 Asia/Tokyo] POSTされた！
+[13-Jan-2020 22:51:11 Asia/Tokyo] POSTされた！
+[13-Jan-2020 22:51:11 Asia/Tokyo] PHP Notice:  Undefined index: knockDownCount in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 550
+[13-Jan-2020 22:51:11 Asia/Tokyo] PHP Notice:  Undefined index: human in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 551
+[13-Jan-2020 22:51:11 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getHp() on null in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:551
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 551
+[13-Jan-2020 22:54:45 Asia/Tokyo] PHP Notice:  Undefined index: knockDownCount in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 550
+[13-Jan-2020 22:54:45 Asia/Tokyo] PHP Notice:  Undefined index: human in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 551
+[13-Jan-2020 22:54:45 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getHp() on null in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:551
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 551
+[13-Jan-2020 22:56:35 Asia/Tokyo] POSTされた！
+[13-Jan-2020 22:56:35 Asia/Tokyo] PHP Notice:  Undefined index: knockDownCount in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 552
+[13-Jan-2020 22:56:35 Asia/Tokyo] PHP Notice:  Undefined index: human in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 553
+[13-Jan-2020 22:56:35 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getHp() on null in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:553
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 553
+[13-Jan-2020 22:57:03 Asia/Tokyo] PHP Notice:  Undefined index: knockDownCount in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 552
+[13-Jan-2020 22:57:03 Asia/Tokyo] PHP Notice:  Undefined index: human in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 553
+[13-Jan-2020 22:57:03 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getHp() on null in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:553
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 553
+[13-Jan-2020 22:57:23 Asia/Tokyo] POSTされた！
+[13-Jan-2020 22:57:23 Asia/Tokyo] PHP Notice:  Undefined index: knockDownCount in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 552
+[13-Jan-2020 22:57:23 Asia/Tokyo] PHP Notice:  Undefined index: human in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 553
+[13-Jan-2020 22:57:23 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getHp() on null in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:553
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 553
+[13-Jan-2020 23:26:27 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Undefined class constant 'BRAVE' in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:330
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 330
+[13-Jan-2020 23:27:09 Asia/Tokyo] POSTされた！
+[13-Jan-2020 23:27:09 Asia/Tokyo] PHP Notice:  Undefined index: knockDownCount in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 553
+[13-Jan-2020 23:27:09 Asia/Tokyo] PHP Notice:  Undefined index: human in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 554
+[13-Jan-2020 23:27:09 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getHp() on null in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:554
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 554
+[13-Jan-2020 23:28:06 Asia/Tokyo] POSTされた！
+[13-Jan-2020 23:28:06 Asia/Tokyo] PHP Notice:  Undefined index: knockDownCount in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 553
+[13-Jan-2020 23:28:06 Asia/Tokyo] PHP Notice:  Undefined index: human in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 554
+[13-Jan-2020 23:28:06 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getHp() on null in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:554
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 554
+[13-Jan-2020 23:32:13 Asia/Tokyo] PHP Notice:  Undefined index: knockDownCount in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 553
+[13-Jan-2020 23:32:13 Asia/Tokyo] PHP Notice:  Undefined index: human in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 554
+[13-Jan-2020 23:32:13 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getHp() on null in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:554
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 554
+[13-Jan-2020 23:32:20 Asia/Tokyo] POSTされた！
+[13-Jan-2020 23:32:20 Asia/Tokyo] PHP Notice:  Undefined variable: human in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 365
+[13-Jan-2020 23:32:20 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getHp() on null in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:554
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 554
+[14-Jan-2020 00:05:28 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:05:39 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:05:45 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:05:50 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:05:52 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:05:53 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:06:01 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:06:06 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:06:07 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:06:07 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:06:08 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:06:08 Asia/Tokyo] PHP Notice:  Undefined offset: 10 in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 356
+[14-Jan-2020 00:06:08 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getName() on null in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:357
+Stack trace:
+#0 /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php(474): createCreature()
+#1 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 357
+[14-Jan-2020 00:08:14 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:18 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:20 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:21 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:22 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:22 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:23 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:24 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:24 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:25 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:25 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:26 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:26 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:27 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:27 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:28 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:28 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:29 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:29 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:30 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:30 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:31 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:32 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:34 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:35 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:36 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:42 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:44 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:44 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:45 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:46 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:46 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:47 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:49 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:08:49 Asia/Tokyo] 1800
+[14-Jan-2020 00:08:55 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:00 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:01 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:01 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:02 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:03 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:04 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:04 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:05 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:06 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:06 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:07 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:07 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:08 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:09 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:09 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:10 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:10 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:11 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:12 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:12 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:13 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:13 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:14 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:15 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:15 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:16 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:16 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:17 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:18 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:18 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:19 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:20 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:20 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:21 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:21 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:22 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:09:23 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:10:12 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:10:13 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:10:30 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:10:30 Asia/Tokyo] 300
+[14-Jan-2020 00:10:34 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:10:39 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:10:48 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:11:00 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:11:01 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:11:04 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:11:05 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:11:08 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:11:09 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:11:10 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:11:14 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:11:16 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:11:18 Asia/Tokyo] POSTされた！
+[14-Jan-2020 00:11:19 Asia/Tokyo] POSTされた！

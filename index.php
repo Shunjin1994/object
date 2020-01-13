@@ -14,17 +14,30 @@ function debug($str){
   }
 }
 
+// プレイヤー格納用
+$humans = array();
 
 // モンスター達格納用
 $monsters = array();
-// $not = array_marge($monsters, $gods);
 
+//　プレイヤーカテゴリー
+class Playercategory{
+  const BRAVE = 1;
+  const WIZARD = 2;
+}
+// モンスターカテゴリー
+class Monstercategory{
+  const BASIC = 1;
+  const MAGIC = 2;
+  const FLY = 3;
+}
 // 性別クラス
 class Sex{
   const MAN = 1;
   const WOMAN = 2;
   const OKAMA = 3;
 }
+
 // 抽象クラス（生き物クラス）
 abstract class Creature{
   protected $name;
@@ -116,9 +129,11 @@ abstract class Creature{
 }
 // 人クラス
 class Human extends Creature{
+  protected $playercategory;
   protected $sex;
-  public function __construct($name, $sex, $maxhp, $hp, $attackMin, $attackMax, $healMin, $healMax) {
+  public function __construct($name, $playercategory, $sex, $maxhp, $hp, $attackMin, $attackMax, $healMin, $healMax) {
     $this->name = $name;
+    $this->playercategory = $playercategory;
     $this->sex = $sex;
     $this->maxhp = $maxhp;
     $this->hp = $hp;
@@ -148,18 +163,67 @@ class Human extends Creature{
     }
   }
 }
+//魔法使いクラス
+class Wizard extends Human{
+  protected $mp;
+  public function __construct($name, $playercategory, $sex, $maxhp, $hp, $attackMin, $attackMax, $healMin, $healMax, $mp){
+    parent::__construct($name, $playercategory, $sex, $maxhp, $hp, $attackMin, $attackMax, $healMin, $healMax);
+    $this->name = $name;
+    $this->playercategory = $playercategory;
+    $this->sex = $sex;
+    $this->maxhp = $maxhp;
+    $this->hp = $hp;
+    $this->attackMin = $attackMin;
+    $this->attackMax = $attackMax;
+    $this->healMin = $healMin;
+    $this->healMax = $healMax;
+    $this->mp = $mp;
+  }
+  public function attack($targetObj){
+    if(!mt_rand(0,2)){ //3分の1の確率で魔法攻撃
+      if($this->mp >= 10){ //MP判定
+        if($targetObj['monscategory'] = 3){ //飛行モンスターへの魔法攻撃
+          $attackPoint = mt_rand(mt_rand($this->attackMin, $this->attackMax) * 0.5, mt_rand($this->attackMin, $this->attackMax) * 2) * 1.5;
+          $attackPoint = (int)$attackPoint;
+          $targetObj->setHp( $targetObj->getHp() - $attackPoint);
+          History::set($this->name.'の魔法攻撃!!');
+          History::set('効果はばつぐんだ!!');
+          History::set($attackPoint.'ポイントのダメージ！');
+        }//魔法攻撃
+        $attackPoint = mt_rand(mt_rand($this->attackMin, $this->attackMax) * 0.5, mt_rand($this->attackMin, $this->attackMax) * 2);
+        $attackPoint = (int)$attackPoint;
+        $targetObj->setHp( $targetObj->getHp() - $attackPoint);
+        History::set($this->name.'の魔法攻撃!!');
+        History::set($attackPoint.'ポイントのダメージ！');
+      }else{
+        History::set('MPが足りない！');
+        parent::attack($targetObj);
+      }
+    }else{
+      parent::attack($targetObj);
+    }
+  }
+
+}
 // モンスタークラス
 class Monster extends Creature{
   // プロパティ
+  protected $monscategory;
   protected $img;
   // コンストラクタ
-  public function __construct($name, $hp, $img, $attackMin, $attackMax, $healMin, $healMax) {
+  public function __construct($name, $monscategory, $hp, $img, $attackMin, $attackMax, $healMin, $healMax) {
     $this->name = $name;
-    // $this->maxhp = $maxhp;
+    $this->monscategory = $monscategory;
     $this->hp = $hp;
     $this->img = $img;
     $this->attackMin = $attackMin;
     $this->attackMax = $attackMax;
+  }
+  public function setMonstercategory($num){
+    $this->monscategory = $num;
+  }
+  public function getMonstercategory(){
+    return $this->monscategory;
   }
   // ゲッター
   public function getImg(){
@@ -173,8 +237,8 @@ class Monster extends Creature{
 // 魔法を使えるモンスタークラス
 class MagicMonster extends Monster{
   private $magicAttack;
-  function __construct($name, $hp, $img, $attackMin, $attackMax, $healMin, $healMax, $magicAttack) {
-    parent::__construct($name, $hp, $img, $attackMin, $attackMax, $healMin, $healMax);
+  function __construct($name, $monscategory, $hp, $img, $attackMin, $attackMax, $healMin, $healMax, $magicAttack) {
+    parent::__construct($name, $monscategory, $hp, $img, $attackMin, $attackMax, $healMin, $healMax);
     $this->magicAttack = $magicAttack;
   }
   public function getMagicAttack(){
@@ -184,7 +248,7 @@ class MagicMonster extends Monster{
     if(!mt_rand(0,4)){ //5分の1の確率で魔法攻撃
       History::set($this->name.'の魔法攻撃!!');
       $targetObj->setHp( $targetObj->getHp() - $this->magicAttack );
-      History::set($this->magicAttack.'ポイントのダメージを受けた！');
+      History::set($this->magicAttack.'ポイントのダメージ！');
     }else{
       parent::attack($targetObj);
     }
@@ -192,8 +256,8 @@ class MagicMonster extends Monster{
 }
 //飛行モンスタークラス
 class FlyingMonster extends Monster{
-  function __construct($name, $hp, $img, $attackMin, $attackMax, $healMin, $healMax) {
-    parent::__construct($name, $hp, $img, $attackMin, $attackMax, $healMin, $healMax);
+  function __construct($name, $monscategory, $hp, $img, $attackMin, $attackMax, $healMin, $healMax) {
+    parent::__construct($name, $monscategory, $hp, $img, $attackMin, $attackMax, $healMin, $healMax);
   }
   public function attack($targetObj){
     if(!mt_rand(0,2)){ //3分の1の確率で飛行攻撃
@@ -201,7 +265,7 @@ class FlyingMonster extends Monster{
       $attackPoint = mt_rand($this->attackMin, $this->attackMax) * 1.2;
       $attackPoint = (int)$attackPoint;
       $targetObj->setHp( $targetObj->getHp() - $attackPoint);
-      History::set($attackPoint.'ポイントのダメージを受けた！');
+      History::set($attackPoint.'ポイントのダメージ！');
       parent::setHp(parent::getHp() - 20);
       History::set($this->name.'は20ポイントの反動を受けた！');
     }else{
@@ -263,43 +327,46 @@ class History implements HistoryInterface{
 }
 
 // インスタンス生成
-$human = new Human('勇者見習い', Sex::OKAMA, 500, 500, 40, 120, 10, 100);
-$monsters[] = new Monster( 'フランケン', 100, 'img/monster01.png', 20, 40, 10, 100 );
-$monsters[] = new MagicMonster( 'フランケンNEO', 300, 'img/monster02.png', 20, 60, 10, 100, mt_rand(50, 100) );
-$monsters[] = new Monster( 'ドラキュリー', 200, 'img/monster03.png', 30, 50, 10, 100 );
-$monsters[] = new MagicMonster( 'ドラキュラ男爵', 400, 'img/monster04.png', 50, 80, 10, 100, mt_rand(60, 120) );
-$monsters[] = new FlyingMonster( 'アルカード', 350, 'img/monster04.png', 40, 100, 10, 100 );
-$monsters[] = new Monster( 'スカルフェイス', 150, 'img/monster05.png', 30, 60, 10, 100 );
-$monsters[] = new FlyingMonster( 'フライングスケルトン', 125, 'img/monster05.png', 20, 40, 10, 100 );
-$monsters[] = new Monster( '毒ハンド', 100, 'img/monster06.png', 10, 30, 10, 100 );
-$monsters[] = new Monster( '泥ハンド', 120, 'img/monster07.png', 20, 30, 10, 100 );
-$monsters[] = new Monster( '血のハンド', 180, 'img/monster08.png', 30, 50, 10, 100 );
-$monsters[] = new Monster( '血のハンド', 180, 'img/monster08.png', 30, 50, 10, 100 );
-// $god[] = new God( '神様', 'img/god.png', 0, 0);
+$humans[] = new Human('勇者', Playercategory::BRAVE, Sex::MAN, 500, 500, 40, 120, 10, 100);
+$humans[] = new Human('魔法使い', Playercategory::WIZARD, Sex::WOMAN, 300, 500, 40, 120, 10, 100, mt_rand(50, 100));
+$monsters[] = new Monster( 'フランケン', Monstercategory::BASIC, 100, 'img/monster01.png', 20, 40, 10, 100 );
+$monsters[] = new MagicMonster( 'フランケンNEO', Monstercategory::MAGIC, 300, 'img/monster02.png', 20, 60, 10, 100, mt_rand(50, 100) );
+$monsters[] = new Monster( 'ドラキュリー', Monstercategory::BASIC, 200, 'img/monster03.png', 30, 50, 10, 100 );
+$monsters[] = new MagicMonster( 'ドラキュラ男爵', Monstercategory::MAGIC, 400, 'img/monster04.png', 50, 80, 10, 100, mt_rand(60, 120) );
+$monsters[] = new FlyingMonster( 'アルカード', Monstercategory::FLY, 350, 'img/monster04.png', 40, 100, 10, 100 );
+$monsters[] = new Monster( 'スカルフェイス', Monstercategory::BASIC, 150, 'img/monster05.png', 30, 60, 10, 100 );
+$monsters[] = new FlyingMonster( 'フライングスケルトン', Monstercategory::FLY, 125, 'img/monster05.png', 20, 40, 10, 100 );
+$monsters[] = new Monster( '毒ハンド', Monstercategory::BASIC, 100, 'img/monster06.png', 10, 30, 10, 100 );
+$monsters[] = new Monster( '泥ハンド', Monstercategory::BASIC, 120, 'img/monster07.png', 20, 30, 10, 100 );
+$monsters[] = new Monster( '血のハンド', Monstercategory::BASIC, 180, 'img/monster08.png', 30, 50, 10, 100 );
 $god = new God( '神様', 'img/god.png');
 
 function createCreature(){
   global $monsters;
   global $god;
 
-  if(mt_rand(0, 1)){
-
-    $monster = $monsters[mt_rand(0, 10)];
-    History::set($monster->getName().'が現れた！');
-    $_SESSION['monster'] = $monster;
-
-  }else{
+  if(!mt_rand(0, 10)){
 
     unset($_SESSION['monster']);
     History::set($god->getName().'が現れた！');
     $_SESSION['god'] = $god;
 
+  }else{
+
+    $monster = $monsters[mt_rand(0, 9)];
+    History::set($monster->getName().'が現れた！');
+    $_SESSION['monster'] = $monster;
+
   }
   
 }
 function createHuman(){
-  global $human;
-  $_SESSION['human'] = $human;
+  global $humans;
+  if($humans[0]){
+    $_SESSION['human'] = $humans[0];
+  }else{
+    $_SESSION['human'] = $humans[1];
+  }
 }
 function init(){
   History::clear();
@@ -316,17 +383,22 @@ function gameOver(){
 
 //1.post送信されていた場合
 if(!empty($_POST)){
+  $startFlg = (!empty($_POST['start'])) ? true : false;
+  $BstartFlg = (!empty($_POST['brave_start'])) ? true : false;
+  $WstartFlg = (!empty($_POST['wizard_start'])) ? true : false;
   $attackFlg = (!empty($_POST['attack'])) ? true : false;
   $healFlg = (!empty($_POST['heal'])) ? true : false;
-  $startFlg = (!empty($_POST['start'])) ? true : false;
   $superhealFlg = (!empty($_POST['superheal'])) ? true : false;
   $powerupFlg = (!empty($_POST['powerup'])) ? true : false;
   $buildupFlg = (!empty($_POST['buildup'])) ? true : false;
   error_log('POSTされた！');
   
-  if($startFlg){
-    History::set('ゲームスタート！');
-    init();
+  // if($startFlg){
+  //   init();
+  if($BstartFlg){
+    History::set('勇者でゲームスタート！');
+  }else if($WstartFlg){
+    History::set('魔法使いでゲームスタート！');
   }else{
     // 攻撃するを押した場合
     if($attackFlg){
@@ -470,7 +542,8 @@ if(!empty($_POST)){
       <?php if(empty($_SESSION)){ ?>
         <h2 style="margin-top:60px;">GAME START ?</h2>
         <form method="post">
-          <input type="submit" name="start" value="▶ゲームスタート">
+          <input type="submit" name="start" value="▶勇者でゲームスタート">
+          <input type="submit" name="start" value="▶魔法使いでゲームスタート">
         </form>
       <?php }else if(!empty($_SESSION['monster'])){ ?>
         <h2><?php echo $_SESSION['monster']->getName().'が現れた!!'; ?></h2>
