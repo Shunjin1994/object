@@ -542,8 +542,8 @@ if(!empty($_POST)){
       <?php if(empty($_SESSION)){ ?>
         <h2 style="margin-top:60px;">GAME START ?</h2>
         <form method="post">
-          <input type="submit" name="start" value="▶勇者でゲームスタート">
-          <input type="submit" name="start" value="▶魔法使いでゲームスタート">
+          <input type="submit" name="brave_start" value="▶勇者でゲームスタート">
+          <input type="submit" name="wizard_start" value="▶魔法使いでゲームスタート">
         </form>
       <?php }else if(!empty($_SESSION['monster'])){ ?>
         <h2><?php echo $_SESSION['monster']->getName().'が現れた!!'; ?></h2>
