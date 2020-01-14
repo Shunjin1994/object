@@ -1,0 +1,58 @@
+[15-Jan-2020 01:14:15 Asia/Tokyo] POSTされた！
+[15-Jan-2020 01:14:15 Asia/Tokyo] PHP Notice:  Undefined index: knockDownCount in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 627
+[15-Jan-2020 01:14:15 Asia/Tokyo] PHP Notice:  Undefined index: human in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 628
+[15-Jan-2020 01:14:15 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getHp() on null in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:628
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 628
+[15-Jan-2020 01:14:42 Asia/Tokyo] PHP Notice:  Undefined index: knockDownCount in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 627
+[15-Jan-2020 01:14:42 Asia/Tokyo] PHP Notice:  Undefined index: human in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 628
+[15-Jan-2020 01:14:42 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getHp() on null in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:628
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 628
+[15-Jan-2020 01:14:48 Asia/Tokyo] PHP Notice:  Undefined index: knockDownCount in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 627
+[15-Jan-2020 01:14:48 Asia/Tokyo] PHP Notice:  Undefined index: human in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 628
+[15-Jan-2020 01:14:48 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getHp() on null in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:628
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 628
+[15-Jan-2020 01:15:01 Asia/Tokyo] POSTされた！
+[15-Jan-2020 01:15:01 Asia/Tokyo] PHP Notice:  Undefined index: knockDownCount in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 627
+[15-Jan-2020 01:15:01 Asia/Tokyo] PHP Notice:  Undefined index: human in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 628
+[15-Jan-2020 01:15:01 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getHp() on null in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:628
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 628
+[15-Jan-2020 01:42:20 Asia/Tokyo] POSTされた！
+[15-Jan-2020 01:42:20 Asia/Tokyo] PHP Notice:  Undefined variable: human in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 365
+[15-Jan-2020 01:42:20 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getHp() on null in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:647
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 647
+[15-Jan-2020 01:43:36 Asia/Tokyo] POSTされた！
+[15-Jan-2020 01:43:36 Asia/Tokyo] PHP Notice:  Undefined variable: human in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 365
+[15-Jan-2020 01:43:36 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getHp() on null in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:631
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 631
+[15-Jan-2020 01:44:42 Asia/Tokyo] POSTされた！
+[15-Jan-2020 01:44:42 Asia/Tokyo] PHP Notice:  Undefined variable: human in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 365
+[15-Jan-2020 01:44:42 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getHp() on int in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:629
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 629
+[15-Jan-2020 01:45:27 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getHp() on null in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:629
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 629
+[15-Jan-2020 01:52:17 Asia/Tokyo] POSTされた！
+[15-Jan-2020 01:52:17 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getHp() on array in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:629
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 629
+[15-Jan-2020 01:55:24 Asia/Tokyo] POSTされた！
+[15-Jan-2020 01:55:24 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getHp() on array in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:629
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 629
