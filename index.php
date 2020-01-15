@@ -362,7 +362,13 @@ function createCreature(){
 }
 function createHuman(){
   global $humans;
-  $_SESSION['human'] = $humans;
+  if($_SESSION['playertype'] === 1){
+    $_SESSION['human'] = $humans[0];
+  }else{
+    $_SESSION['human'] = $humans[1];
+  }
+  
+  // var_dump($_SESSION['human']);
 }
 function init(){
   History::clear();
@@ -468,6 +474,7 @@ if(!empty($_POST)){
       createCreature();
     }
   }
+  $_POST = array();
   if($WstartFlg){
     History::set('魔法使いでゲームスタート！');
     init();
@@ -634,7 +641,11 @@ if(!empty($_POST)){
           <input type="submit" name="heal" value="▶回復する">
           <input type="submit" name="attack" value="▶攻撃する">
           <input type="submit" name="escape" value="▶逃げる">
-          <input type="submit" name="start" value="▶ゲームリスタート">
+          <?php if($_SESSION['playertype'] === 1){ ?>
+          <input type="submit" name="brave_start" value="▶ゲームリスタート">
+        <?php }else{ ?>
+          <input type="submit" name="wizard_start" value="▶ゲームリスタート">
+        <?php } ?>
         </form>
         <?php }else{ ?>
         <h2><?php echo $_SESSION['god']->getName().'が現れた!!'; ?></h2>
@@ -652,7 +663,11 @@ if(!empty($_POST)){
           <input type="submit" name="superheal" value="▶回復してもらう">
           <input type="submit" name="powerup" value="▶強くしてもらう">
           <input type="submit" name="buildup" value="▶丈夫にしてもらう">
-          <input type="submit" name="start" value="▶ゲームリスタート">
+        <?php if($_SESSION['playertype'] === 1){ ?>
+          <input type="submit" name="brave_start" value="▶ゲームリスタート">
+        <?php }else{ ?>
+          <input type="submit" name="wizard_start" value="▶ゲームリスタート">
+        <?php } ?>
         </form>
       <?php } ?>
       <div style="position:absolute; right:-350px; top:0; color:black; width: 300px;">
