@@ -17,3 +17,58 @@ Stack trace:
 [16-Jan-2020 00:53:14 Asia/Tokyo] POSTされた！
 [16-Jan-2020 00:53:18 Asia/Tokyo] POSTされた！
 [16-Jan-2020 00:53:22 Asia/Tokyo] POSTされた！
+[16-Jan-2020 01:11:29 Asia/Tokyo] POSTされた！
+[16-Jan-2020 01:11:54 Asia/Tokyo] POSTされた！
+[16-Jan-2020 01:11:54 Asia/Tokyo] PHP Notice:  Undefined index: playertype in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 365
+[16-Jan-2020 22:38:28 Asia/Tokyo] POSTされた！
+[16-Jan-2020 22:39:03 Asia/Tokyo] POSTされた！
+[16-Jan-2020 22:39:35 Asia/Tokyo] POSTされた！
+[16-Jan-2020 22:39:43 Asia/Tokyo] POSTされた！
+[16-Jan-2020 22:39:57 Asia/Tokyo] POSTされた！
+[17-Jan-2020 00:30:54 Asia/Tokyo] POSTされた！
+[17-Jan-2020 00:30:59 Asia/Tokyo] POSTされた！
+[17-Jan-2020 00:30:59 Asia/Tokyo] PHP Notice:  Undefined index: monster in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 489
+[17-Jan-2020 00:30:59 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function setHp() on null in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:99
+Stack trace:
+#0 /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php(489): Creature->attack(NULL)
+#1 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 99
+[17-Jan-2020 00:31:24 Asia/Tokyo] POSTされた！
+[17-Jan-2020 00:31:40 Asia/Tokyo] POSTされた！
+[17-Jan-2020 00:31:40 Asia/Tokyo] PHP Notice:  Undefined index: monster in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 489
+[17-Jan-2020 00:31:40 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function setHp() on null in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:99
+Stack trace:
+#0 /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php(489): Creature->attack(NULL)
+#1 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 99
+[17-Jan-2020 00:35:34 Asia/Tokyo] POSTされた！
+[17-Jan-2020 00:36:24 Asia/Tokyo] POSTされた！
+[17-Jan-2020 00:41:08 Asia/Tokyo] POSTされた！
+[17-Jan-2020 00:51:28 Asia/Tokyo] POSTされた！
+[17-Jan-2020 00:51:49 Asia/Tokyo] POSTされた！
+[17-Jan-2020 00:51:53 Asia/Tokyo] POSTされた！
+[17-Jan-2020 00:52:20 Asia/Tokyo] POSTされた！
+[17-Jan-2020 00:52:25 Asia/Tokyo] POSTされた！
+[17-Jan-2020 00:54:29 Asia/Tokyo] POSTされた！
+[17-Jan-2020 00:54:35 Asia/Tokyo] POSTされた！
+[17-Jan-2020 00:54:39 Asia/Tokyo] POSTされた！
+[17-Jan-2020 00:54:51 Asia/Tokyo] POSTされた！
+[17-Jan-2020 00:56:23 Asia/Tokyo] POSTされた！
+[17-Jan-2020 00:56:43 Asia/Tokyo] POSTされた！
+[17-Jan-2020 02:15:17 Asia/Tokyo] POSTされた！
+[17-Jan-2020 02:25:03 Asia/Tokyo] POSTされた！
+[17-Jan-2020 02:47:42 Asia/Tokyo] POSTされた！
+[17-Jan-2020 02:50:41 Asia/Tokyo] POSTされた！
+[17-Jan-2020 02:54:08 Asia/Tokyo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Human::__construct(), 9 passed in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 337 and exactly 10 expected in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:134
+Stack trace:
+#0 /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php(337): Human->__construct('\xE5\x8B\x87\xE8\x80\x85', 1, 1, 500, 500, 40, 120, 10, 100)
+#1 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 134
+[17-Jan-2020 02:54:12 Asia/Tokyo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Human::__construct(), 9 passed in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 337 and exactly 10 expected in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:134
+Stack trace:
+#0 /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php(337): Human->__construct('\xE5\x8B\x87\xE8\x80\x85', 1, 1, 500, 500, 40, 120, 10, 100)
+#1 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 134
+[17-Jan-2020 02:55:23 Asia/Tokyo] POSTされた！
+[17-Jan-2020 02:57:34 Asia/Tokyo] POSTされた！
+[17-Jan-2020 02:57:52 Asia/Tokyo] POSTされた！

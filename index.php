@@ -131,7 +131,7 @@ abstract class Creature{
 class Human extends Creature{
   protected $playertype;
   protected $sex;
-  public function __construct($name, $playertype, $sex, $maxhp, $hp, $attackMin, $attackMax, $healMin, $healMax) {
+  public function __construct($name, $playertype, $sex, $maxhp, $hp, $attackMin, $attackMax, $healMin, $healMax, $mp) {
     $this->name = $name;
     $this->playertype = $playertype;
     $this->sex = $sex;
@@ -141,6 +141,7 @@ class Human extends Creature{
     $this->attackMax = $attackMax;
     $this->healMin = $healMin;
     $this->healMax = $healMax;
+    $this->mp = $mp;
   }
   public function setSex($num){
     $this->sex = $num;
@@ -162,12 +163,18 @@ class Human extends Creature{
         break;
     }
   }
+  public function setMp($num){
+    $this->mp = $mp;
+  }
+  public function getMp(){
+    return $this->mp;
+  }
 }
 //魔法使いクラス
 class Wizard extends Human{
   protected $mp;
   public function __construct($name, $playertype, $sex, $maxhp, $hp, $attackMin, $attackMax, $healMin, $healMax, $mp){
-    parent::__construct($name, $playertype, $sex, $maxhp, $hp, $attackMin, $attackMax, $healMin, $healMax);
+    parent::__construct($name, $playertype, $sex, $maxhp, $hp, $attackMin, $attackMax, $healMin, $healMax, $mp);
     $this->name = $name;
     $this->playertype = $playertype;
     $this->sex = $sex;
@@ -327,8 +334,8 @@ class History implements HistoryInterface{
 }
 
 // インスタンス生成
-$humans[] = new Human('勇者', Playertype::BRAVE, Sex::MAN, 500, 500, 40, 120, 10, 100);
-$humans[] = new Human('魔法使い', Playertype::WIZARD, Sex::WOMAN, 300, 500, 40, 120, 10, 100, mt_rand(50, 100));
+$humans[] = new Human('勇者', Playertype::BRAVE, Sex::MAN, 500, 500, 40, 120, 10, 100, mt_rand(50, 100));
+$humans[] = new Human('魔法使い', Playertype::WIZARD, Sex::WOMAN, 300, 300, 40, 120, 10, 100, mt_rand(50, 100));
 $monsters[] = new Monster( 'フランケン', Monstercategory::BASIC, 100, 'img/monster01.png', 20, 40, 10, 100 );
 $monsters[] = new MagicMonster( 'フランケンNEO', Monstercategory::MAGIC, 300, 'img/monster02.png', 20, 60, 10, 100, mt_rand(50, 100) );
 $monsters[] = new Monster( 'ドラキュリー', Monstercategory::BASIC, 200, 'img/monster03.png', 30, 50, 10, 100 );
@@ -367,8 +374,7 @@ function createHuman(){
   }else{
     $_SESSION['human'] = $humans[1];
   }
-  
-  // var_dump($_SESSION['human']);
+  var_dump($_SESSION['human']);
 }
 function init(){
   History::clear();
@@ -385,9 +391,9 @@ function gameOver(){
 
 //1.post送信されていた場合
 if(!empty($_POST)){
-  $startFlg = (!empty($_POST['start'])) ? true : false;
-  $BstartFlg = (!empty($_POST['brave_start'])) ? true : false;
-  $WstartFlg = (!empty($_POST['wizard_start'])) ? true : false;
+  // $startFlg = (!empty($_POST['start'])) ? true : false;
+  $BstartFlg = (!empty($_POST['brave'])) ? true : false;
+  $WstartFlg = (!empty($_POST['wizard'])) ? true : false;
   $attackFlg = (!empty($_POST['attack'])) ? true : false;
   $healFlg = (!empty($_POST['heal'])) ? true : false;
   $superhealFlg = (!empty($_POST['superheal'])) ? true : false;
@@ -399,86 +405,8 @@ if(!empty($_POST)){
   //   init();
   if($BstartFlg){
     History::set('勇者でゲームスタート！');
-    init();
     $_SESSION['playertype'] = 1;
-  }else{
-    // 攻撃するを押した場合
-    if($attackFlg){
-      
-      // モンスターに攻撃を与える
-      History::set($_SESSION['human']->getName().'の攻撃！');
-      $_SESSION['human']->attack($_SESSION['monster']);
-      $_SESSION['monster']->sayCry();
-      
-      // モンスターが攻撃をする
-      History::set($_SESSION['monster']->getName().'の攻撃！');
-      $_SESSION['monster']->attack($_SESSION['human']);
-      $_SESSION['human']->sayCry();
-      
-      // 自分のhpが0以下になったらゲームオーバー
-      if($_SESSION['human']->getHp() <= 0){
-        gameOver();
-
-      }else{
-        // hpが0以下になったら、別のモンスターを出現させる
-        if($_SESSION['monster']->getHp() <= 0){
-          History::set($_SESSION['monster']->getName().'を倒した！');
-          createCreature();
-          $_SESSION['knockDownCount'] = $_SESSION['knockDownCount']+1;
-        }
-      }
-    
-    }else if($healFlg){// 回復するを押した場合
-
-      if($_SESSION['healcount'] >= 3){
-
-        History::set('もう回復できません！');
-
-      }else{
-        // 回復する
-        History::set($_SESSION['human']->getName().'の回復！');
-        $_SESSION['human']->heal($_SESSION['human']);
-        $_SESSION['healcount'] += 1;
-      }
-
-      // モンスターが攻撃をする
-      History::set($_SESSION['monster']->getName().'の攻撃！');
-      $_SESSION['monster']->attack($_SESSION['human']);
-      $_SESSION['human']->sayCry();
-
-      // 自分のhpが0以下になったらゲームオーバー
-      if($_SESSION['human']->getHp() <= 0){
-        gameOver();
-      }
-
-    }else if($superhealFlg){// 神：回復してもらうを押した場合
-
-      History::set($_SESSION['god']->getName().'が回復してくれた！');
-      $_SESSION['human']->superheal($_SESSION['human']);
-      createCreature();
-
-    }else if($powerupFlg){// 神：強くしてもらうを押した場合
-
-        History::set($_SESSION['god']->getName().'が強くしてくれた！');
-        $_SESSION['human']->powerup($_SESSION['human']);
-        createCreature();
-
-    }else if($buildupFlg){// 神：丈夫にしてもらうを押した場合
-
-        History::set($_SESSION['god']->getName().'に丈夫にしてもらった！');
-        $_SESSION['human']->buildup($_SESSION['human']);
-        createCreature();
-
-    }else{ //逃げるを押した場合
-      History::set('逃げた！');
-      createCreature();
-    }
-  }
-  $_POST = array();
-  if($WstartFlg){
-    History::set('魔法使いでゲームスタート！');
     init();
-    $_SESSION['playertype'] = 2;
   }else{
     // 攻撃するを押した場合
     if($attackFlg){
@@ -553,8 +481,87 @@ if(!empty($_POST)){
     }
   }
   $_POST = array();//これは？
-}
 
+if($WstartFlg){
+  History::set('魔法使いでゲームスタート！');
+  $_SESSION['playertype'] = 2;
+  init();
+}else{
+  // 攻撃するを押した場合
+  if($attackFlg){
+    
+    // モンスターに攻撃を与える
+    History::set($_SESSION['human']->getName().'の攻撃！');
+    $_SESSION['human']->attack($_SESSION['monster']);
+    $_SESSION['monster']->sayCry();
+    
+    // モンスターが攻撃をする
+    History::set($_SESSION['monster']->getName().'の攻撃！');
+    $_SESSION['monster']->attack($_SESSION['human']);
+    $_SESSION['human']->sayCry();
+    
+    // 自分のhpが0以下になったらゲームオーバー
+    if($_SESSION['human']->getHp() <= 0){
+      gameOver();
+
+    }else{
+      // hpが0以下になったら、別のモンスターを出現させる
+      if($_SESSION['monster']->getHp() <= 0){
+        History::set($_SESSION['monster']->getName().'を倒した！');
+        createCreature();
+        $_SESSION['knockDownCount'] = $_SESSION['knockDownCount']+1;
+      }
+    }
+  
+  }else if($healFlg){// 回復するを押した場合
+
+    if($_SESSION['healcount'] >= 3){
+
+      History::set('もう回復できません！');
+
+    }else{
+      // 回復する
+      History::set($_SESSION['human']->getName().'の回復！');
+      $_SESSION['human']->heal($_SESSION['human']);
+      $_SESSION['healcount'] += 1;
+    }
+
+    // モンスターが攻撃をする
+    History::set($_SESSION['monster']->getName().'の攻撃！');
+    $_SESSION['monster']->attack($_SESSION['human']);
+    $_SESSION['human']->sayCry();
+
+    // 自分のhpが0以下になったらゲームオーバー
+    if($_SESSION['human']->getHp() <= 0){
+      gameOver();
+    }
+
+  }else if($superhealFlg){// 神：回復してもらうを押した場合
+
+    History::set($_SESSION['god']->getName().'が回復してくれた！');
+    $_SESSION['human']->superheal($_SESSION['human']);
+    createCreature();
+
+  }else if($powerupFlg){// 神：強くしてもらうを押した場合
+
+      History::set($_SESSION['god']->getName().'が強くしてくれた！');
+      $_SESSION['human']->powerup($_SESSION['human']);
+      createCreature();
+
+  }else if($buildupFlg){// 神：丈夫にしてもらうを押した場合
+
+      History::set($_SESSION['god']->getName().'に丈夫にしてもらった！');
+      $_SESSION['human']->buildup($_SESSION['human']);
+      createCreature();
+
+  }else{ //逃げるを押した場合
+    History::set('逃げた！');
+    createCreature();
+  }
+}
+$_POST = array();//これは？
+}
+  
 ?>
 
 <!DOCTYPE html>
@@ -622,8 +629,8 @@ if(!empty($_POST)){
       <?php if(empty($_SESSION)){ ?>
         <h2 style="margin-top:60px;">GAME START ?</h2>
         <form method="post">
-          <input type="submit" name="brave_start" value="▶勇者でゲームスタート">
-          <input type="submit" name="wizard_start" value="▶魔法使いでゲームスタート">
+          <input type="submit" name="brave" value="▶勇者でゲームスタート">
+          <input type="submit" name="wizard" value="▶魔法使いでゲームスタート">
         </form>
       <?php }else if(!empty($_SESSION['monster'])){ ?>
         <h2><?php echo $_SESSION['monster']->getName().'が現れた!!'; ?></h2>
@@ -637,14 +644,17 @@ if(!empty($_POST)){
         <?php }else{ ?>
           <p>魔法使いの残りHP：<?php echo $_SESSION['human']->getHp(); ?></p>
         <?php } ?>
+        <?php if($_SESSION['playertype'] === 2){ ?>
+          <p>魔法使いの残りMP：<?php echo $_SESSION['human']->getMp(); ?></p>
+        <?php } ?>
         <form method="post">
           <input type="submit" name="heal" value="▶回復する">
           <input type="submit" name="attack" value="▶攻撃する">
           <input type="submit" name="escape" value="▶逃げる">
           <?php if($_SESSION['playertype'] === 1){ ?>
-          <input type="submit" name="brave_start" value="▶ゲームリスタート">
+          <input type="submit" name="brave" value="▶ゲームリスタート">
         <?php }else{ ?>
-          <input type="submit" name="wizard_start" value="▶ゲームリスタート">
+          <input type="submit" name="wizard" value="▶ゲームリスタート">
         <?php } ?>
         </form>
         <?php }else{ ?>
@@ -659,14 +669,17 @@ if(!empty($_POST)){
         <?php }else{ ?>
           <p>魔法使いの残りHP：<?php echo $_SESSION['human']->getHp(); ?></p>
         <?php } ?>
+        <?php if($_SESSION['playertype'] === 2){ ?>
+          <p>魔法使いの残りMP：<?php echo $_SESSION['human']->getMp(); ?></p>
+        <?php } ?>
         <form method="post">
           <input type="submit" name="superheal" value="▶回復してもらう">
           <input type="submit" name="powerup" value="▶強くしてもらう">
           <input type="submit" name="buildup" value="▶丈夫にしてもらう">
         <?php if($_SESSION['playertype'] === 1){ ?>
-          <input type="submit" name="brave_start" value="▶ゲームリスタート">
+          <input type="submit" name="brave" value="▶ゲームリスタート">
         <?php }else{ ?>
-          <input type="submit" name="wizard_start" value="▶ゲームリスタート">
+          <input type="submit" name="wizard" value="▶ゲームリスタート">
         <?php } ?>
         </form>
       <?php } ?>
