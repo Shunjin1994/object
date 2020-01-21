@@ -1,74 +1,246 @@
-[16-Jan-2020 00:30:39 Asia/Tokyo] POSTされた！
-[16-Jan-2020 00:30:39 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getHp() on array in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:632
+[20-Jan-2020 23:36:47 Asia/Tokyo] POSTされた！
+[20-Jan-2020 23:36:50 Asia/Tokyo] POSTされた！
+[20-Jan-2020 23:36:53 Asia/Tokyo] POSTされた！
+[20-Jan-2020 23:36:55 Asia/Tokyo] POSTされた！
+[20-Jan-2020 23:36:57 Asia/Tokyo] POSTされた！
+[20-Jan-2020 23:37:00 Asia/Tokyo] POSTされた！
+[20-Jan-2020 23:37:00 Asia/Tokyo] PHP Warning:  error_log() expects parameter 1 to be string, object given in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 191
+[20-Jan-2020 23:37:05 Asia/Tokyo] POSTされた！
+[20-Jan-2020 23:37:24 Asia/Tokyo] POSTされた！
+[20-Jan-2020 23:37:26 Asia/Tokyo] POSTされた！
+[20-Jan-2020 23:37:32 Asia/Tokyo] POSTされた！
+[20-Jan-2020 23:37:35 Asia/Tokyo] POSTされた！
+[20-Jan-2020 23:37:37 Asia/Tokyo] POSTされた！
+[20-Jan-2020 23:37:40 Asia/Tokyo] POSTされた！
+[20-Jan-2020 23:38:06 Asia/Tokyo] POSTされた！
+[20-Jan-2020 23:38:08 Asia/Tokyo] POSTされた！
+[20-Jan-2020 23:38:10 Asia/Tokyo] POSTされた！
+[20-Jan-2020 23:38:59 Asia/Tokyo] POSTされた！
+[20-Jan-2020 23:39:06 Asia/Tokyo] POSTされた！
+[20-Jan-2020 23:56:59 Asia/Tokyo] POSTされた！
+[20-Jan-2020 23:59:54 Asia/Tokyo] POSTされた！
+[20-Jan-2020 23:59:56 Asia/Tokyo] POSTされた！
+[20-Jan-2020 23:59:59 Asia/Tokyo] POSTされた！
+[21-Jan-2020 00:00:01 Asia/Tokyo] POSTされた！
+[21-Jan-2020 00:00:02 Asia/Tokyo] POSTされた！
+[21-Jan-2020 00:00:04 Asia/Tokyo] POSTされた！
+[21-Jan-2020 00:00:04 Asia/Tokyo] PHP Notice:  Undefined index: monstercategory in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 191
+[21-Jan-2020 00:08:03 Asia/Tokyo] POSTされた！
+[21-Jan-2020 00:08:40 Asia/Tokyo] POSTされた！
+[21-Jan-2020 00:08:48 Asia/Tokyo] POSTされた！
+[21-Jan-2020 00:08:52 Asia/Tokyo] POSTされた！
+[21-Jan-2020 00:08:55 Asia/Tokyo] POSTされた！
+[21-Jan-2020 00:08:59 Asia/Tokyo] POSTされた！
+[21-Jan-2020 00:09:00 Asia/Tokyo] POSTされた！
+[21-Jan-2020 00:09:03 Asia/Tokyo] POSTされた！
+[21-Jan-2020 00:09:05 Asia/Tokyo] POSTされた！
+[21-Jan-2020 00:09:10 Asia/Tokyo] POSTされた！
+[21-Jan-2020 00:09:29 Asia/Tokyo] POSTされた！
+[21-Jan-2020 00:09:30 Asia/Tokyo] POSTされた！
+[21-Jan-2020 00:09:37 Asia/Tokyo] POSTされた！
+[21-Jan-2020 00:09:39 Asia/Tokyo] POSTされた！
+[21-Jan-2020 00:09:41 Asia/Tokyo] POSTされた！
+[21-Jan-2020 00:09:44 Asia/Tokyo] POSTされた！
+[21-Jan-2020 00:09:51 Asia/Tokyo] POSTされた！
+[21-Jan-2020 00:09:59 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:17:52 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:17:56 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:17:57 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:17:57 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:17:58 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:17:58 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:17:58 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:17:58 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:17:59 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:17:59 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:17:59 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:17:59 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:17:59 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:00 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:00 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:00 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:00 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:00 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:01 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:01 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:01 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:01 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:01 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:02 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:02 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:02 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:02 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:02 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:03 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:03 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:03 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:03 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:04 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:04 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:06 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:07 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:08 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:09 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:10 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:11 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:15 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:16 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:17 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:18 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:19 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:20 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:21 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:39 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:40 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:41 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:42 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:44 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:45 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:46 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:47 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:48 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:50 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:51 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:51 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:52 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:52 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:54 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:54 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:55 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:56 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:57 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:58 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:58 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:18:59 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:19:00 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:19:02 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:19:22 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:19:23 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:19:24 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:19:25 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:19:25 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:19:26 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:19:27 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:19:27 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:19:28 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:19:29 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:19:30 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:19:31 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:19:32 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:19:38 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:19:40 Asia/Tokyo] POSTされた！
+[21-Jan-2020 23:23:57 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:30:36 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:30:41 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:30:47 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:30:49 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:30:57 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:30:59 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:02 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:03 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:04 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:05 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:05 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:06 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:06 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:06 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:07 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:07 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:07 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:08 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:08 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:08 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:09 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:09 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:09 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:09 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:10 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:10 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:10 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:11 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:11 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:12 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:12 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:13 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:13 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:14 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:15 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:15 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:16 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:17 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:17 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:18 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:19 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:19 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:20 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:20 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:21 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:21 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:22 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:23 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:24 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:25 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:26 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:26 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:27 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:27 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:28 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:29 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:29 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:30 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:31 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:32 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:32 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:33 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:34 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:35 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:35 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:37 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:38 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:39 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:39 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:40 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:41 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:42 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:43 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:44 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:44 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:45 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:47 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:48 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:49 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:49 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:51 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:54 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:55 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:58 Asia/Tokyo] POSTされた！
+[22-Jan-2020 01:31:59 Asia/Tokyo] POSTされた！
+[22-Jan-2020 02:08:16 Asia/Tokyo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function BossMonster::__construct(), 9 passed in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework05/index.php on line 407 and exactly 10 expected in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework05/index.php:326
 Stack trace:
-#0 {main}
-  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 632
-[16-Jan-2020 00:40:52 Asia/Tokyo] POSTされた！
-[16-Jan-2020 00:40:52 Asia/Tokyo] PHP Notice:  Undefined index: playertype in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 365
-[16-Jan-2020 00:41:07 Asia/Tokyo] POSTされた！
-[16-Jan-2020 00:45:07 Asia/Tokyo] POSTされた！
-[16-Jan-2020 00:45:07 Asia/Tokyo] PHP Notice:  Undefined index: playertype in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 365
-[16-Jan-2020 00:45:20 Asia/Tokyo] POSTされた！
-[16-Jan-2020 00:45:38 Asia/Tokyo] POSTされた！
-[16-Jan-2020 00:49:49 Asia/Tokyo] POSTされた！
-[16-Jan-2020 00:49:52 Asia/Tokyo] POSTされた！
-[16-Jan-2020 00:49:54 Asia/Tokyo] POSTされた！
-[16-Jan-2020 00:49:57 Asia/Tokyo] POSTされた！
-[16-Jan-2020 00:53:14 Asia/Tokyo] POSTされた！
-[16-Jan-2020 00:53:18 Asia/Tokyo] POSTされた！
-[16-Jan-2020 00:53:22 Asia/Tokyo] POSTされた！
-[16-Jan-2020 01:11:29 Asia/Tokyo] POSTされた！
-[16-Jan-2020 01:11:54 Asia/Tokyo] POSTされた！
-[16-Jan-2020 01:11:54 Asia/Tokyo] PHP Notice:  Undefined index: playertype in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 365
-[16-Jan-2020 22:38:28 Asia/Tokyo] POSTされた！
-[16-Jan-2020 22:39:03 Asia/Tokyo] POSTされた！
-[16-Jan-2020 22:39:35 Asia/Tokyo] POSTされた！
-[16-Jan-2020 22:39:43 Asia/Tokyo] POSTされた！
-[16-Jan-2020 22:39:57 Asia/Tokyo] POSTされた！
-[17-Jan-2020 00:30:54 Asia/Tokyo] POSTされた！
-[17-Jan-2020 00:30:59 Asia/Tokyo] POSTされた！
-[17-Jan-2020 00:30:59 Asia/Tokyo] PHP Notice:  Undefined index: monster in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 489
-[17-Jan-2020 00:30:59 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function setHp() on null in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:99
-Stack trace:
-#0 /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php(489): Creature->attack(NULL)
+#0 /Applications/MAMP/htdocs/objective/objective_homework/objective_homework05/index.php(407): BossMonster->__construct('Dracula', 4, 500, 500, 'img/bossmonster...', 50, 80, 10, 100)
 #1 {main}
-  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 99
-[17-Jan-2020 00:31:24 Asia/Tokyo] POSTされた！
-[17-Jan-2020 00:31:40 Asia/Tokyo] POSTされた！
-[17-Jan-2020 00:31:40 Asia/Tokyo] PHP Notice:  Undefined index: monster in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 489
-[17-Jan-2020 00:31:40 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function setHp() on null in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:99
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework05/index.php on line 326
+[22-Jan-2020 02:42:44 Asia/Tokyo] PHP Notice:  Undefined variable: healMax in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework05/index.php on line 326
+[22-Jan-2020 02:42:47 Asia/Tokyo] PHP Notice:  Undefined variable: healMax in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework05/index.php on line 326
+[22-Jan-2020 02:42:47 Asia/Tokyo] POSTされた！
+[22-Jan-2020 02:44:02 Asia/Tokyo] PHP Notice:  Undefined variable: healMax in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework05/index.php on line 326
+[22-Jan-2020 02:47:01 Asia/Tokyo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Monster::__construct(), 8 passed in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework05/index.php on line 326 and exactly 9 expected in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework05/index.php:257
 Stack trace:
-#0 /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php(489): Creature->attack(NULL)
-#1 {main}
-  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 99
-[17-Jan-2020 00:35:34 Asia/Tokyo] POSTされた！
-[17-Jan-2020 00:36:24 Asia/Tokyo] POSTされた！
-[17-Jan-2020 00:41:08 Asia/Tokyo] POSTされた！
-[17-Jan-2020 00:51:28 Asia/Tokyo] POSTされた！
-[17-Jan-2020 00:51:49 Asia/Tokyo] POSTされた！
-[17-Jan-2020 00:51:53 Asia/Tokyo] POSTされた！
-[17-Jan-2020 00:52:20 Asia/Tokyo] POSTされた！
-[17-Jan-2020 00:52:25 Asia/Tokyo] POSTされた！
-[17-Jan-2020 00:54:29 Asia/Tokyo] POSTされた！
-[17-Jan-2020 00:54:35 Asia/Tokyo] POSTされた！
-[17-Jan-2020 00:54:39 Asia/Tokyo] POSTされた！
-[17-Jan-2020 00:54:51 Asia/Tokyo] POSTされた！
-[17-Jan-2020 00:56:23 Asia/Tokyo] POSTされた！
-[17-Jan-2020 00:56:43 Asia/Tokyo] POSTされた！
-[17-Jan-2020 02:15:17 Asia/Tokyo] POSTされた！
-[17-Jan-2020 02:25:03 Asia/Tokyo] POSTされた！
-[17-Jan-2020 02:47:42 Asia/Tokyo] POSTされた！
-[17-Jan-2020 02:50:41 Asia/Tokyo] POSTされた！
-[17-Jan-2020 02:54:08 Asia/Tokyo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Human::__construct(), 9 passed in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 337 and exactly 10 expected in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:134
-Stack trace:
-#0 /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php(337): Human->__construct('\xE5\x8B\x87\xE8\x80\x85', 1, 1, 500, 500, 40, 120, 10, 100)
-#1 {main}
-  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 134
-[17-Jan-2020 02:54:12 Asia/Tokyo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Human::__construct(), 9 passed in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 337 and exactly 10 expected in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php:134
-Stack trace:
-#0 /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php(337): Human->__construct('\xE5\x8B\x87\xE8\x80\x85', 1, 1, 500, 500, 40, 120, 10, 100)
-#1 {main}
-  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework04/index.php on line 134
-[17-Jan-2020 02:55:23 Asia/Tokyo] POSTされた！
-[17-Jan-2020 02:57:34 Asia/Tokyo] POSTされた！
-[17-Jan-2020 02:57:52 Asia/Tokyo] POSTされた！
+#0 /Applications/MAMP/htdocs/objective/objective_homework/objective_homework05/index.php(326): Monster->__construct('Dracula', 4, 500, 500, 'img/bossmonster...', 50, 80, 10)
+#1 /Applications/MAMP/htdocs/objective/objective_homework/objective_homework05/index.php(410): BossMonster->__construct('Dracula', 4, 500, 500, 500, 'img/bossmonster...', 50, 80, 10, 100)
+#2 {main}
+  thrown in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework05/index.php on line 257
+[22-Jan-2020 02:47:12 Asia/Tokyo] PHP Notice:  Undefined variable: healMax in /Applications/MAMP/htdocs/objective/objective_homework/objective_homework05/index.php on line 326
+[22-Jan-2020 02:49:01 Asia/Tokyo] POSTされた！
+[22-Jan-2020 02:49:03 Asia/Tokyo] POSTされた！
+[22-Jan-2020 02:49:03 Asia/Tokyo] POSTされた！
+[22-Jan-2020 02:49:04 Asia/Tokyo] POSTされた！
+[22-Jan-2020 02:49:04 Asia/Tokyo] POSTされた！
+[22-Jan-2020 02:49:04 Asia/Tokyo] POSTされた！
+[22-Jan-2020 02:49:04 Asia/Tokyo] POSTされた！
+[22-Jan-2020 02:49:04 Asia/Tokyo] POSTされた！
+[22-Jan-2020 02:49:05 Asia/Tokyo] POSTされた！
+[22-Jan-2020 02:49:05 Asia/Tokyo] POSTされた！
+[22-Jan-2020 02:49:05 Asia/Tokyo] POSTされた！
+[22-Jan-2020 02:49:10 Asia/Tokyo] POSTされた！
+[22-Jan-2020 02:49:11 Asia/Tokyo] POSTされた！
