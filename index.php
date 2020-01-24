@@ -89,6 +89,15 @@ abstract class Creature{
 
   public function attack($targetObj){
     $attackPoint = mt_rand($this->attackMin, $this->attackMax);
+    if($targetObj === $_SESSION['monster'] && $_SESSION['monstercategory'] === 4){
+      if(!mt_rand(0,9)){ //10分の1の確率でクリティカル
+        $attackPoint = $attackPoint * 1.5;
+        $attackPoint = (int)$attackPoint;
+        History::set($this->getName().'のクリティカルヒット!!');
+      }
+      $targetObj->setBossHp($targetObj->getBossHp()-$attackPoint);
+      History::set($attackPoint.'ポイントのダメージ！');
+    }
     if(!mt_rand(0,9)){ //10分の1の確率でクリティカル
       $attackPoint = $attackPoint * 1.5;
       $attackPoint = (int)$attackPoint;
@@ -322,19 +331,24 @@ class FlyingMonster extends Monster{
 //ボスモンスタークラス
 class BossMonster extends Monster{
   private $bosshp;
-  // public static $attackMin = 50;
-  // public static $attackMax = 80;
+  // public static $bossattackMin = 50;
+  // public static $bossattackMax = 80;
   function __construct($name, $monstercategory, $maxhp, $hp, $bosshp, $img, $attackMin, $attackMax, $healMin, $healMax) {
     parent::__construct($name, $monstercategory, $maxhp, $hp, $img, $attackMin, $attackMax, $healMin, $healMax);
     $this->bosshp = $bosshp;
-    // $this->attackMin = self::$attackMin;
-    // $this->attackMax = self::$attackMax;
+    $this->attackMin = 50;
+    $this->getAttackMax = 80;
+    // $this->bossattackMin = self::$bossattackMin;
+    // $this->bossattackMax = self::$bossattackMax;
+  }
+  public function getfirstBossHp(){
+    return $this->bosshp + ($_SESSION['knockDownCount'] * 10);
+  }
+  public function setBossHp($num){
+    $this->bosshp = $num;
   }
   public function getBossHp(){
     return $this->bosshp;
-  }
-  public function setBossHp($hp){
-    $this->bosshp = $hp + ($_SESSION['knockDownCount'] * 10);
   }
 }
 //神様クラス
@@ -412,7 +426,10 @@ function createCreature(){
       $monster = $monsters[mt_rand(0, 10)];
       History::set($monster->getName().'が現れた！');
       $_SESSION['monster'] = $monster;
-      $_SESSION['monstercategory']->getMonstercategory();
+      $_SESSION['monstercategory'] = $_SESSION['monster']->getMonstercategory();
+      // var_dump($_SESSION['monster']);
+      // $_SESSION['monstercategory'] = 
+      // $_SESSION['monstercategory']->getMonstercategory();
     }
   }else{
     if(!mt_rand(0, 10)){
@@ -423,7 +440,8 @@ function createCreature(){
       $monster = $monsters[mt_rand(0, 9)];
       History::set($monster->getName().'が現れた！');
       $_SESSION['monster'] = $monster;
-      $_SESSION['monstercategory']->getMonstercategory();
+      $_SESSION['monstercategory'] = $_SESSION['monster']->getMonstercategory();
+      // $_SESSION['monstercategory'] = 
       // $_SESSION['monstercategory']->getMonstercategory();
     }
   }
@@ -459,6 +477,7 @@ if(!empty($_POST)){
   $superhealFlg = (!empty($_POST['superheal'])) ? true : false;
   $powerupFlg = (!empty($_POST['powerup'])) ? true : false;
   $buildupFlg = (!empty($_POST['buildup'])) ? true : false;
+  $clearFlg = 0;
   error_log('POSTされた！');
   
   // if($startFlg){
@@ -477,6 +496,7 @@ if(!empty($_POST)){
       History::set($_SESSION['human']->getName().'の攻撃！');
       $_SESSION['human']->attack($_SESSION['monster']);
       $_SESSION['monster']->sayCry();
+
       
       // モンスターが攻撃をする
       if($_SESSION['monster']->getHp() > 0){
@@ -495,11 +515,16 @@ if(!empty($_POST)){
 
       }else{
         // hpが0以下になったら、別のモンスターを出現させる
-        error_log($_SESSION['monster']);
+        // error_log($_SESSION['monster']);
         if($_SESSION['monster']->getHp() <= 0){
-          History::set($_SESSION['monster']->getName().'を倒した！');
-          createCreature();
-          $_SESSION['knockDownCount'] = $_SESSION['knockDownCount']+1;
+          if($_SESSION['monstercategory'] === 4){
+            History::clear();
+            $clearFlg = true;
+          }else{
+            History::set($_SESSION['monster']->getName().'を倒した！');
+            createCreature();
+            $_SESSION['knockDownCount'] = $_SESSION['knockDownCount']+1;
+          }
         }
       }
     
@@ -587,9 +612,14 @@ if(!empty($_POST)){
         // hpが0以下になったら、別のモンスターを出現させる
         // var_dump($_SESSION['monster']);
         if($_SESSION['monster']->getHp() <= 0){
-          History::set($_SESSION['monster']->getName().'を倒した！');
-          createCreature();
-          $_SESSION['knockDownCount'] = $_SESSION['knockDownCount']+1;
+          if($_SESSION['monstercategory'] === 4){
+            History::clear();
+            $clearFlg = true;
+          }else{
+            History::set($_SESSION['monster']->getName().'を倒した！');
+            createCreature();
+            $_SESSION['knockDownCount'] = $_SESSION['knockDownCount']+1;
+          }
         }
       }
     
@@ -712,15 +742,18 @@ if(!empty($_POST)){
           <input type="submit" name="brave" value="▶勇者でゲームスタート">
           <input type="submit" name="wizard" value="▶魔法使いでゲームスタート">
         </form>
+      <?php }else if(!empty($clearFlg)){ ?>
+        <h2 style="margin-top:60px;">GAME CLEAR !</h2>
       <?php }else if(!empty($_SESSION['monster'])){ ?>
         <h2><?php echo $_SESSION['monster']->getName().'が現れた!!'; ?></h2>
         <div style="height: 150px;">
           <img src="<?php echo $_SESSION['monster']->getImg(); ?>" style="width:120px; height:auto; margin:40px auto 0 auto; display:block;">
         </div>
         <?php if($_SESSION['monstercategory'] === 4){ ?>
-          <p style="font-size:14px; text-align:center;">ボスモンスターのHP：<?php echo $_SESSION['monster']->getBossHp(); ?></p>
-        <?php } ?>
+          <p style="font-size:14px; text-align:center;">ボスモンスターのHP：<?php echo $_SESSION['monster']->getfirstBossHp(); ?></p>
+        <?php }else{ ?>
         <p style="font-size:14px; text-align:center;">モンスターのHP：<?php echo $_SESSION['monster']->getHp(); ?></p>
+        <?php } ?>
         <p>倒したモンスター数：<?php echo $_SESSION['knockDownCount']; ?></p>
         <?php if($_SESSION['playertype'] === 1){ ?>
           <p>勇者の残りHP：<?php echo $_SESSION['human']->getHp(); ?></p>
