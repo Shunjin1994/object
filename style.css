@@ -424,6 +424,10 @@ input[type="submit"]:hover {
   cursor: pointer;
 }
 
+input[type="submit"]:disabled {
+  cursor: not-allowed;
+}
+
 .form-container {
   margin: 0 auto;
 }
@@ -560,6 +564,7 @@ input[type="submit"]:hover {
   margin: 0;
 }
 .inputText.is-error{
+  border-style: solid;
   border-color: #FF1493;
   background: #fff8f9;
 }

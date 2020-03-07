@@ -114,7 +114,7 @@ if(!empty($_POST)){
             </div>
             <label class="<?php if(!empty($err_msg['email'])) echo 'err'; ?>">
               Email
-              <input type="text" id="email" name="email" value="<?php if(!empty($_POST['email'])) echo $_POST['email']; ?>" class="inputText js-form-validate js-blur-valid-email" autocomplete="off">
+              <input type="text" id="email" name="email" value="<?php if(!empty($_POST['email'])) echo $_POST['email']; ?>" class="inputText js-form-validate" autocomplete="off">
               <span class="msgArea js-set-msg-email"></span>
             </label>
             <div class="area-msg">
@@ -123,8 +123,9 @@ if(!empty($_POST)){
               ?>
             </div>
             <label class="<?php if(!empty($err_msg['pass'])) echo 'err'; ?>">
-              パスワード <span style="font-size:12px">※英数字６文字以上</span>
-              <input type="password" id="password" name="pass" value="<?php if(!empty($_POST['pass'])) echo $_POST['pass']; ?>" class="js-form-validate">
+              パスワード <span style="font-size:12px">※半角英数字６文字以上</span>
+              <input type="password" id="password" name="pass" value="<?php if(!empty($_POST['pass'])) echo $_POST['pass']; ?>" class="inputText js-form-validate" autocomplete="off">
+              <span class="msgArea js-set-msg-password"></span>
             </label>
             <div class="area-msg">
               <?php 
@@ -133,7 +134,8 @@ if(!empty($_POST)){
             </div>
             <label class="<?php if(!empty($err_msg['pass_re'])) echo 'err'; ?>">
               パスワード（再入力）
-              <input type="password" id="password_re" name="pass_re" value="<?php if(!empty($_POST['pass_re'])) echo $_POST['pass_re']; ?>" class="js-form-validate">
+              <input type="password" id="password_re" name="pass_re" value="<?php if(!empty($_POST['pass_re'])) echo $_POST['pass_re']; ?>" class="inputText js-form-validate" autocomplete="off">
+              <span class="msgArea js-set-msg-password_re"></span>
             </label>
             <div class="area-msg">
               <?php 

@@ -7,17 +7,48 @@ $(function(){
 
     //1.タイトルフォームが入力された場合のイベントをセットする    focus change
     $('.js-form-validate').on('keyup', function () {
-      console.log('.js-form-validate');
         //2.タイトルフォームの中身(value)を取得して中身が入っているか確認
         //if文、なにか値があればtrue、空ならfalse
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;
         var password_re = document.getElementById("password_re").value;
 
+        // var result = 1;
         var checkResult = true;
+        var e_regexp = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/;
+        var p_regexp = /^(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,20}$/i;
 
-        if(password.length <= 5){
+
+        if(!email || e_regexp.test(email)){
+            $('.js-set-msg-email').removeClass('is-error');
+            $(this).removeClass('is-error');
+            $('.js-set-msg-email').text("");
+        }else{
             checkResult = false;
+            $('.js-set-msg-email').addClass('is-error');
+            $(this).addClass('is-error');
+            $('.js-set-msg-email').text("メールアドレスの形式ではありません");
+        }
+
+        if (!password || password.length >= 6 || p_regexp.test(password)) {
+            $('.js-set-msg-password').removeClass('is-error');
+            $(this).removeClass('is-error');
+            $('.js-set-msg-password').text("");
+        }else{
+            checkResult = false;
+            $('.js-set-msg-password').addClass('is-error');
+            $(this).addClass('is-error');
+            $('.js-set-msg-password').text("半角英数字6文字以上ではありません");
+        }
+
+        if (!password_re || password_re === password) {
+            $('.js-set-msg-password_re').removeClass('is-error');
+            $(this).removeClass('is-error');
+            $('.js-set-msg-password_re').text("");
+        }else{
+            $('.js-set-msg-password_re').addClass('is-error');
+            $(this).addClass('is-error');
+            $('.js-set-msg-password_re').text("パスワードと一致していません");
         }
         
         if(checkResult){
@@ -28,41 +59,4 @@ $(function(){
             $('.js-disabled-submit').prop('disabled', true);
         }
     });
-
-    // $('.js-blur-valid-email').on('blur',function (e) {
-
-    //     // コールバック関数内では、thisはajax関数自体になってしまうため、
-    //     // ajax関数内でイベントのthisを使いたいなら変数に保持しておく
-    //     var $that = $(this);
-    
-    //     // // Ajaxを実行する
-    //     $.ajax({
-    //       type: 'post',
-    //       url: 'ajax.php',
-    //       dataType: 'json', // 必ず指定すること。指定しないとエラーが出る＆返却値を文字列と認識してしまう
-    //       data: {
-    //         email: $(this).val()
-    //       }
-    //     }).then(function(data) {
-    //       console.log(data);
-
-    //       if(data){
-    //         console.log(data);
-    
-    //         // フォームにメッセージをセットし、背景色を変更する
-    //         if(data.errorFlg){
-    //           $('.js-set-msg-email').addClass('is-error');
-    //           $('.js-set-msg-email').removeClass('is-success');
-    //           $that.addClass('is-error');
-    //           $that.removeClass('is-success');
-    //         }else{
-    //           $('.js-set-msg-email').addClass('is-success');
-    //           $('.js-set-msg-email').removeClass('is-error');
-    //           $that.addClass('is-success');
-    //           $that.removeClass('is-error');
-    //         }
-    //         $('.js-set-msg-email').text(data.msg);
-    //       }
-    //     });
-    //   });
 });
